@@ -1,0 +1,15 @@
+services:
+  - name: pufferpanel
+    type: web
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: starter
+    envVars:
+      - key: PUFFERPANEL_DB_USER
+        value: your_database_user
+      - key: PUFFERPANEL_DB_PASSWORD
+        value: your_database_password
+    disk:
+      - name: server_files
+        mountPath: /srv/pufferpanel
+        sizeGB: 10
